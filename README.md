@@ -17,7 +17,7 @@ conda activate CREWS
 
 ## Data
 
-Prepare your dataset as described in [docs/data.md](docs/data.md), then set
+Prepare your dataset then set
 `data_root` in [configs/experiment_2_jitter.yaml](configs/experiment_2_jitter.yaml)
 (or pass `--data_root`).
 
