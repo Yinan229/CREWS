@@ -17,7 +17,7 @@ conda activate CREWS
 
 ## Data
 
-Download the CoSense dataset from (https://drive.google.com/drive/folders/16IEgLhZlkQFhFSPei6rIkPvwTe6slylj?usp=sharing), then set `data_root` in
+Download the CoSense dataset from [Google Drive](https://drive.google.com/drive/folders/16IEgLhZlkQFhFSPei6rIkPvwTe6slylj?usp=sharing), then set `data_root` in
 [configs/experiment_2_jitter.yaml](configs/experiment_2_jitter.yaml)
 (or pass `--data_root`).
 
