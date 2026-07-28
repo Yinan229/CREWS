@@ -52,17 +52,8 @@ The dropout setting is chosen in `src/crews/training/trainer.py`:
 self.drop_probs_train, self.drop_probs_test = make_S3(cfg.s3_prob)
 ```
 
-Edit that line and set `jitter` in the config:
+For example, Straggler Reversal is `make_S3(0.9)` with `jitter: false`.
 
-| Paper | That line becomes | `jitter` |
-|-------|-------------------|----------|
-| Table 1, Ideal | `make_S1(0)` | `false` |
-| Table 1, Loss(0.3) | `make_S1(0.3)` | `false` |
-| Table 1, Loss(0.5) | `make_S1(0.5)` | `false` |
-| Fig. 6(a), Arrival Shift | `make_S1(0)` | `true` |
-| Fig. 6(b), Straggler Reversal | `make_S3(0.9)` | `false` |
+---
 
-Both functions live in `src/crews/simulation/dropout.py`. The shipped default is
-Straggler Reversal.
-Note: run from the **project root** so that `configs/...` resolves; or pass an absolute
-`--config` path.
+This repository is under active development.
