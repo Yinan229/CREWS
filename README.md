@@ -13,7 +13,6 @@ conda:
 ```bash
 conda env create -f environment.yaml
 conda activate CREWS
-pip install -e .   # optional, avoids PYTHONPATH
 ```
 
 ## Data
