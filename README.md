@@ -2,7 +2,7 @@
 
 **CREWS: Collaborative Robust Edge WiFi Sensing with Asynchronous and Incomplete Observations**
 
-The paper is now publicly available on arXiv:
+The full paper with the supplementary appendix is now publicly available on arXiv:
 
 📄 **Paper:** [https://arxiv.org/abs/2605.30356](https://arxiv.org/abs/2605.30356)
 
