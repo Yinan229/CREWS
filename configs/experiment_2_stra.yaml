@@ -1,0 +1,65 @@
+# Default configuration for Experiment 2 (Jitter).
+# Every value here can be overridden on the command line, e.g.:
+#   python -m crews.experiments.experiment_2_jitter --config configs/experiment_2_jitter.yaml --seed 3 --s3_prob 0.9
+
+experiment_name: Experiment_2_Jitter_New_2
+
+# --- data / io ---
+data_root: ./data
+output_dir: outputs
+environments:
+  - data_for_yn_V1
+  - data_for_ch_V1
+  - data_for_zj_V1
+  - data_for_wt_V1
+  - data_for_wq_V1
+  - data_for_yl_V1
+
+# --- device / compute ---
+device: cuda:0
+limit_num_threads: true
+
+# --- reproducibility ---
+seed: 0
+sim_seed_test: 20250909
+split_seed: 2025
+train_rng_seed: 20251216
+epa_rng_seed: 20251217
+
+# --- dataset / loader ---
+num_classes: 6
+maxnum_of_clients: 8
+batch_size: 120
+test_ratio: 0.3
+num_workers: 0
+
+# --- model split config ---
+client_blocks: [1, 1, 1, 1, 1, 1, 1, 1]
+
+# --- optimization ---
+lr: 0.001
+epochs: 100
+
+# --- dropout / jitter simulation ---
+s1_prob: 0.9
+s3_prob: 0.9
+fix_test_missing: true
+# view-swap jitter augmentation
+jitter: false
+jitter_swap_prob: 0.3
+
+# --- stale cache ---
+num_batches_keep: 5
+stale_budget: 2
+lambda_decay: 0.4
+# normalize stale loss by the staleness-weight sum (else plain mean)
+normalize_stale_loss: true
+
+# --- Elastic Parameter Alignment (EPA) schedule ---
+epa_interval: 4
+# Elastic (EMA) blend toward the global average on each EPA sync:
+#   theta_k^+ = (1 - mu) * theta_k + mu * theta_global
+# mu=1.0 => full overwrite by the global average (hard alignment).
+epa_mu: 1.0
+# client selection for EPA alignment ('all' = align every client each round)
+k_align: all
