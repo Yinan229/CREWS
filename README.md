@@ -56,4 +56,13 @@ For example, Straggler Reversal is `make_S3(0.9)` with `jitter: false`.
 
 ---
 
-This repository is under active development.
+---
+
+## 🚧 Work in Progress
+
+**This is not the final release.** The repository is actively being updated.
+
+Remaining experiment settings, scripts, documentation and usage examples are still
+being added, and interfaces may change without notice.
+
+Please star or watch this repository to follow the updates. Thanks for your interest!
